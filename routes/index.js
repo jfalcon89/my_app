@@ -12,7 +12,7 @@ router.get("/contacto", (req, res) => {
 });
 
 router.get("/404", (req, res, next) => {
-    res.render("404", { nombre: "datos 404 desde una variable dinamica" });
+    res.render("404");
 
 });
 
