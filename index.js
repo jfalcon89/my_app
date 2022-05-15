@@ -31,7 +31,7 @@ mongoose.connect(uri, (err) => {
 //     console.log("la conexion a base de datos funciona");
 // });
 
-//--------------CONEXION AL SERVIDOR----------------//
+//--------------CONEXION AL SERVIDOR-----------------//
 app.set("port", process.env.PORT || 3000);
 
 app.listen(app.get("port"), () => {
