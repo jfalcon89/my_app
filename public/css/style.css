@@ -1,4 +1,63 @@
 h1 {
-    background-color: aqua;
+    /* background-color: aqua; */
     font-family: sans-serif;
+}
+
+#img-mascotas {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    display: flex;
+    margin: auto;
+}
+
+.slide-contenedor {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide-contenedor ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: cambio 20s linear infinite alternate;
+}
+
+.slide-contenedor li {
+    width: 100%;
+    list-style: none;
+    padding-left: 80px;
+}
+
+.slide-contenedor img {
+    width: 100%;
+    margin-left: 8%;
+}
+
+@keyframes cambio {
+    0% {
+        margin-left: 0%;
+    }
+    20% {
+        margin-left: 0%;
+    }
+    25% {
+        margin-left: -100%;
+    }
+    45% {
+        margin-left: -100%;
+    }
+    50% {
+        margin-left: -200%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    75% {
+        margin-left: -300%;
+    }
+    100% {
+        margin-left: -300%;
+    }
 }

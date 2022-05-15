@@ -14,10 +14,6 @@ const mongoose = require("mongoose");
 
 const uri = `mongodb+srv://${process.env.USUARIO}:${process.env.PASSWORD}@cluster0.cnkdh.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`
 
-// mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-// .then(() => console.log('conectado a mongodb'))
-// .catch(e => console.log('error de conexión', e))
-
 mongoose.connect(uri, (err) => {
     if (err) throw err
     console.log("la conexion a base de datos funciona");
@@ -48,13 +44,14 @@ app.use(express.static(path.join(__dirname, "public")));
 //----------RUTAS WEB DE LAS VISTAS----------------//
 app.use(routes);
 app.use("/Mascotas", require("./routes/Mascotas"));
+app.use("/alimentos", require("./routes/alimentos"));
 
 
 
 app.use((req, res, next) => {
     //console.log(`${req.url} -${req.method}`);
-    res.status(404).render("404"); // REVISAR RENDER DE PAGINA 404 QUE NO ESTA FUNCIONANDO 
-    //next();
+    res.status(404).render("404");
+
 });
 
 //motor de plantilla 

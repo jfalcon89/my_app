@@ -1,36 +1,36 @@
 <!-- Cabecera & Navbar template -->
-<%- include('template/cabecera', {tituloWeb: "Mascotas" }); %>
+<%- include('template/cabecera', {tituloWeb: "alimentos" }); %>
 
 
     <div class="container">
-        <img id="img-mascotas" class="w-75" src="https://www.mundomascotasmartinez.es/img/cms/mascotas-1024x427.jpg" alt="portada-mascotas">
-        <h1 class="d-flex justify-content-center text-secondary">Mascotas</h1>
+        <img id="img-mascotas" class="w-75" src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/2021-02/familia_de_productos_ecuador.png" alt="">
+        <h1 class="d-flex justify-content-center text-secondary">Alimentos</h1>
         <table class="table table-sm">
             <thead class="thead-ligth">
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Raza</th>
-                    <th scope="col">Sexo</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Edad</th>
                     <th scope="col">Accion</th>
                 </tr>
             </thead>
             <tbody>
-                <% if (arrayMascotas.length > 0) { %>
-                    <% arrayMascotas.forEach(mascota=> { %>
+                <% if (arrayAlimentos.length > 0) { %>
+                    <% arrayAlimentos.forEach(alimentos=> { %>
 
                         <tr>
                             <th scope="row">
-                                <%= mascota.id %>
+                                <%= alimentos.id %>
                             </th>
                             <td>
-                                <%= mascota.nombre %>
+                                <%= alimentos.nombre %>
                             </td>
                             <td>
-                                <%= mascota.raza %>
+                                <%= alimentos.marca %>
                             </td>
                             <td>
-                                <%= mascota.sexo %>
+                                <%= alimentos.edad %>
                             </td>
                             <td>@mdo</td>
                         </tr>
@@ -41,6 +41,7 @@
             </tbody>
         </table>
     </div>
+
     </body>
 
     </html>
