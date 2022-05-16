@@ -1,47 +1,48 @@
 <!-- Cabecera & Navbar template -->
 <%- include('template/cabecera', {tituloWeb: "alimentos" }); %>
+    <%- include('template/navbar'); %>
 
+        <div class="container">
+            <img data-aos="fade-left" id="img-mascotas" class="w-75" src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/2021-02/familia_de_productos_ecuador.png" alt="">
+            <h1 data-aos="fade-up" class="text-secondary">Alimentos</h1>
 
-    <div class="container">
-        <img id="img-mascotas" class="w-75" src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/2021-02/familia_de_productos_ecuador.png" alt="">
-        <h1 class="d-flex justify-content-center text-secondary">Alimentos</h1>
-        <table class="table table-sm">
-            <thead class="thead-ligth">
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Marca</th>
-                    <th scope="col">Edad</th>
-                    <th scope="col">Accion</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% if (arrayAlimentos.length > 0) { %>
-                    <% arrayAlimentos.forEach(alimentos=> { %>
-
+            <div class="container-table table-responsive">
+                <table class="table table-sm">
+                    <thead class="thead-ligth">
                         <tr>
-                            <th scope="row">
-                                <%= alimentos.id %>
-                            </th>
-                            <td>
-                                <%= alimentos.nombre %>
-                            </td>
-                            <td>
-                                <%= alimentos.marca %>
-                            </td>
-                            <td>
-                                <%= alimentos.edad %>
-                            </td>
-                            <td>@mdo</td>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Accion</th>
                         </tr>
+                    </thead>
+                    <tbody>
+                        <% if (arrayAlimentos.length > 0) { %>
+                            <% arrayAlimentos.forEach(alimentos=> { %>
 
-                        <% }) %>
-                            <% } %>
+                                <tr>
+                                    <th scope="row">
+                                        <%= alimentos.id %>
+                                    </th>
+                                    <td>
+                                        <%= alimentos.nombre %>
+                                    </td>
+                                    <td>
+                                        <%= alimentos.marca %>
+                                    </td>
+                                    <td>
+                                        <%= alimentos.edad %>
+                                    </td>
+                                    <td>@mdo</td>
+                                </tr>
 
-            </tbody>
-        </table>
-    </div>
+                                <% }) %>
+                                    <% } %>
 
-    </body>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-    </html>
+        <%- include("template/footer")  %>

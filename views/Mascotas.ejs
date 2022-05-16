@@ -1,46 +1,51 @@
 <!-- Cabecera & Navbar template -->
 <%- include('template/cabecera', {tituloWeb: "Mascotas" }); %>
+    <%- include('template/navbar'); %>
 
+        <div class="container">
+            <img data-aos="fade-left" id="img-mascotas" class="w-75" src="https://www.mundomascotasmartinez.es/img/cms/mascotas-1024x427.jpg" alt="portada-mascotas">
+            <h1 data-aos="fade-up" class=" text-secondary">Mascotas</h1>
 
-    <div class="container">
-        <img id="img-mascotas" class="w-75" src="https://www.mundomascotasmartinez.es/img/cms/mascotas-1024x427.jpg" alt="portada-mascotas">
-        <h1 class="d-flex justify-content-center text-secondary">Mascotas</h1>
-        <table class="table table-sm">
-            <thead class="thead-ligth">
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Raza</th>
-                    <th scope="col">Sexo</th>
-                    <th scope="col">Accion</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% if (arrayMascotas.length > 0) { %>
-                    <% arrayMascotas.forEach(mascota=> { %>
+            <a class="btn btn-success btn-block my-4" href="/Mascotas/crear">Crear nueva mascota</a>
 
+            <div class="container-table table-responsive">
+                <table class="table table-sm ">
+                    <thead class="thead-ligth">
                         <tr>
-                            <th scope="row">
-                                <%= mascota.id %>
-                            </th>
-                            <td>
-                                <%= mascota.nombre %>
-                            </td>
-                            <td>
-                                <%= mascota.raza %>
-                            </td>
-                            <td>
-                                <%= mascota.sexo %>
-                            </td>
-                            <td>@mdo</td>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Raza</th>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">Accion</th>
                         </tr>
+                    </thead>
+                    <tbody>
+                        <% if (arrayMascotas.length > 0) { %>
+                            <% arrayMascotas.forEach(mascota=> { %>
 
-                        <% }) %>
-                            <% } %>
+                                <tr>
+                                    <th scope="row">
+                                        <%= mascota.id %>
+                                    </th>
+                                    <td>
+                                        <%= mascota.nombre %>
+                                    </td>
+                                    <td>
+                                        <%= mascota.raza %>
+                                    </td>
+                                    <td>
+                                        <%= mascota.sexo %>
+                                    </td>
+                                    <td><a href="mascotas/<%= mascota.id %>" class="btn btn-warning btn-sm">Editar</a></td>
+                                </tr>
 
-            </tbody>
-        </table>
-    </div>
-    </body>
+                                <% }) %>
+                                    <% } %>
 
-    </html>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <%- include("template/footer")  %>

@@ -1,13 +1,12 @@
 <!-- Cabecera & Navbar template -->
-<%- include('template/cabecera', {tituloWeb: "Inicio"}); %>
+<%- include('template/cabecera', {tituloWeb: "404"}); %>
+    <%- include('template/navbar'); %>
 
-    <div class="container w-75 d-flex justify-content-center">
-        <img class="mw-100" src="https://st3.depositphotos.com/9494100/15431/i/600/depositphotos_154313516-stock-photo-pug-dog-with-yellow-constructor.jpg" alt="">
-    </div>
-    <h3 class="d-flex justify-content-center"><a class="btn btn-info" href="/">ir a la pagina de Inicio</a></h3>
+        <div class="container w-75 d-flex justify-content-center">
+            <img data-aos="fade-right" class="mw-100" src="https://st3.depositphotos.com/9494100/15431/i/600/depositphotos_154313516-stock-photo-pug-dog-with-yellow-constructor.jpg" alt="">
+        </div>
+        <h3 class="d-flex justify-content-center"><a class="btn btn-info" href="/">ir a la pagina de Inicio</a></h3>
 
 
 
-    </body>
-
-    </html>
+        <%- include("template/footer")  %>

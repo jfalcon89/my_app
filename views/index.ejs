@@ -1,25 +1,23 @@
 <!-- Cabecera & Navbar template -->
 <%- include('template/cabecera', {tituloWeb: "Inicio"}); %>
+    <%- include('template/navbar'); %>
 
+        <!-- <img src="" alt=""> -->
+        <div class="conteiner-slide d-flex justify-content-center">
+            <div class="slide-contenedor">
+                <ul>
+                    <li><img style="width: 75%;" src="https://static.comunicae.com/photos/notas/1207903/1568983465_hospital_veterinario_madrid_sur.jpg"></li>
+                    <li><img style="width: 75%;" src="https://www.warrenphotographic.co.uk/photography/bigs/33123-Seven-boxer-puppies-sitting-in-a-row-white-background.jpg"></li>
+                    <li><img style="width: 75%;" src="https://1.bp.blogspot.com/-0sv5em5QzG0/WocswWHZToI/AAAAAAAABNI/EKt0LhobIo8Ww0QxAlYqrApmi4mZ2TNsQCPcBGAYYCw/s1600/Mascotas.png"></li>
+                    <li><img style="width: 75%;" src="https://thumbs.dreamstime.com/b/gato-perro-y-conejo-h%C3%A1mster-juntos-un-en-pleno-crecimiento-sobre-fondo-blanco-158957321.jpg"></li>
+                </ul>
 
-    <!-- <img src="" alt=""> -->
+            </div>
+        </div>
 
-    <div class="slide-contenedor">
-        <ul>
-            <li><img style="width: 75%;" src="https://static.comunicae.com/photos/notas/1207903/1568983465_hospital_veterinario_madrid_sur.jpg"></li>
-            <li><img style="width: 75%;" src="https://www.warrenphotographic.co.uk/photography/bigs/33123-Seven-boxer-puppies-sitting-in-a-row-white-background.jpg"></li>
-            <li><img style="width: 75%;" src="https://1.bp.blogspot.com/-0sv5em5QzG0/WocswWHZToI/AAAAAAAABNI/EKt0LhobIo8Ww0QxAlYqrApmi4mZ2TNsQCPcBGAYYCw/s1600/Mascotas.png"></li>
-            <li><img style="width: 75%;" src="https://thumbs.dreamstime.com/b/gato-perro-y-conejo-h%C3%A1mster-juntos-un-en-pleno-crecimiento-sobre-fondo-blanco-158957321.jpg"></li>
-        </ul>
+        <h1>pagina de inicio</h1>
+        <h2>
+            <%= nombre %>
+        </h2>
 
-    </div>
-
-
-    <h1>pagina de inicio</h1>
-    <h2>
-        <%= nombre %>
-    </h2>
-
-    </body>
-
-    </html>
+        <%- include("template/footer")  %>

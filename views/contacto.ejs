@@ -1,11 +1,12 @@
 <!-- Cabecera & Navbar template -->
 <%- include('template/cabecera', {tituloWeb: "Contacto"}); %>
+    <%- include('template/navbar'); %>
+
+        <h1>esta es una pagina dinamica de contacto</h1>
+        <h2>
+            <%= nombre %>
+        </h2>
 
 
-    <h1>esta es una pagina dinamica de contacto</h1>
-    <h2>
-        <%= nombre %>
-    </h2>
-    </body>
 
-    </html>
+        <%- include("template/footer")  %>

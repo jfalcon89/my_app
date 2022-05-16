@@ -1,3 +1,4 @@
+const { json } = require("body-parser");
 const express = require("express");
 const router = express.Router();
 
@@ -18,6 +19,71 @@ router.get("/", async(req, res) => {
         console.log(error)
     }
 
+});
+
+router.get("/crear", (req, res) => {
+    res.render("crear");
+});
+
+//CREAR MASCOTA
+router.post("/", async(req, res) => {
+    const body = req.body
+    try {
+        await Mascota.create(body)
+
+        res.redirect("/Mascotas");
+
+    } catch (error) {
+        console.log(error)
+    }
+});
+
+router.get("/:id", async(req, res) => {
+
+    const id = req.params.id
+
+    try {
+        const mascotaDB = await Mascota.findOne({ _id: id });
+        console.log(mascotaDB);
+
+        res.render("detalle", {
+            mascota: mascotaDB,
+            error: false
+        })
+
+
+    } catch (error) {
+        console.log(error)
+        res.render("detalle", {
+            error: true,
+            mensaje: "no se encuentra el id seleccionado"
+        });
+    }
+
+});
+
+router.delete("/:id", async(req, res) => {
+
+    const id = req.params.id
+
+    try {
+
+        const mascotaDB = await Mascota.findByIdAndDelete({ _id: id })
+
+        if (mascotaDB) {
+            res.json({
+                estado: true,
+                mensaje: "eliminado"
+            })
+        } else {
+            res.json({
+                estado: false,
+                mensaje: "fallo eliminar"
+            })
+        }
+    } catch (error) {
+        console.log(error)
+    }
 
 });
 

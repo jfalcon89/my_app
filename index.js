@@ -8,6 +8,10 @@ const express = require("express");
 const app = express(); //asignacion de express en app
 require('dotenv').config()
 
+//CONFIGURACION PARA LEER EL BODY
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 ////---------CONEXION A LA BASE DE DATOS MONGODB----------////
 const mongoose = require("mongoose");
 
@@ -60,9 +64,3 @@ app.set("views", path.join(__dirname, "/views"));
 
 
 //middlewares
-
-//COMENTADO TEMPORARMENTE
-
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));

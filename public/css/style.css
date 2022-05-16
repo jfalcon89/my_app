@@ -27,7 +27,7 @@ h1 {
 .slide-contenedor li {
     width: 100%;
     list-style: none;
-    padding-left: 80px;
+    /* padding-left: 80px; */
 }
 
 .slide-contenedor img {
