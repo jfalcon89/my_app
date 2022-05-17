@@ -23,7 +23,7 @@ mongoose.connect(uri, (err) => {
     console.log("la conexion a base de datos funciona");
 });
 
-////-----------CONEXION A LA BASE DE DATOS MYSQL----------//// 
+////-----------CONEXION A LA BASE DE DATOS MYSQL---------//// 
 // const conection = mysql.createConnection({
 //     host: "localhost",
 //     user: "root",
