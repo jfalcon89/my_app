@@ -3,7 +3,7 @@
     <%- include('template/navbar'); %>
 
         <!-- <img src="" alt=""> -->
-        <div class="conteiner-slide d-flex justify-content-center">
+        <!-- <div class="conteiner-slide d-flex justify-content-center">
             <div class="slide-contenedor">
                 <ul>
                     <li><img style="width: 75%;" src="https://static.comunicae.com/photos/notas/1207903/1568983465_hospital_veterinario_madrid_sur.jpg"></li>
@@ -13,9 +13,33 @@
                 </ul>
 
             </div>
+        </div> -->
+        <div class="container mw-100 img_container img_slide">
+            <div class="d-flex justify-content-center titulo_slide">
+                <h1 data-aos="fade-up">Mascotas</h1>
+            </div>
+
+            <div class="container-circulos">
+                <div data-aos="fade-right" class="circulo fondo_circulo1 d-flex justify-content-center align-items-center">
+                    <h1 data-aos="zoom-in-down">Alimentos</h1>
+                </div>
+                <div data-aos="zoom-in-up" class="circulo fondo_circulo2 d-flex justify-content-center align-items-center">
+                    <h1 data-aos="zoom-in-down">Suplementos</h1>
+                </div>
+                <div data-aos="fade-left" class="circulo fondo_circulo3 d-flex justify-content-center align-items-center">
+                    <h1 data-aos="zoom-in-down">Cuidado</h1>
+                </div>
+            </div>
+            <ul>
+                <li class="img_slide"><img style="width: 75%;" src="/img/inicio/slide_img_index.png"></li>
+            </ul>
         </div>
 
-        <h1>pagina de inicio</h1>
+        <div style="height: 350px; position: relative; " class="mascota_saludable">
+            <h1 style="z-index: 10; position: absolute; font-size: 70px;">Mascotas <br> Saludables</h1>
+            <div style="background: url(/img/inicio/mascotas_saludables.jpg) center 100%; height: 350px; opacity: 40%; fill-opacity: inherit; "></div>
+        </div>
+
         <h2>
             <%= nombre %>
         </h2>
