@@ -45,18 +45,16 @@ app.listen(app.get("port"), () => {
 //----------CONFIGURACION RUTAS ESTATICA-------------//
 app.use(express.static(path.join(__dirname, "public")));
 
-//----------RUTAS WEB DE LAS VISTAS----------------//
+//----------RUTAS WEB DE LOS HANDLERS----------------//
 app.use(routes);
 app.use("/Mascotas", require("./routes/Mascotas"));
 app.use("/alimentos", require("./routes/alimentos"));
 
-
-
 app.use((req, res, next) => {
     //console.log(`${req.url} -${req.method}`);
     res.status(404).render("404");
-
 });
+
 
 //motor de plantilla 
 app.set("view engine", "ejs");

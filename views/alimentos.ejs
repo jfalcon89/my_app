@@ -6,6 +6,8 @@
             <img data-aos="fade-left" id="img-mascotas" class="w-75" src="/img/alimentos/img_alimentos-p.jpg" alt="alimentos">
             <h1 data-aos="fade-up" class="text-secondary">Alimentos</h1>
 
+            <a class="btn btn-success btn-block my-4" href="/alimentos/crear-alimentos">Crear nuevo alimento</a>
+
             <div class="container-table table-responsive">
                 <table class="table table-sm">
                     <thead class="thead-ligth">
@@ -34,7 +36,7 @@
                                     <td>
                                         <%= alimentos.edad %>
                                     </td>
-                                    <td>@mdo</td>
+                                    <td><a href="alimentos/<%= alimentos.id %>" class="btn btn-warning btn-sm">Editar</a></td>
                                 </tr>
 
                                 <% }) %>

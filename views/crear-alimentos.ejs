@@ -1,0 +1,18 @@
+<!-- Cabecera & Navbar template -->
+<%- include('template/cabecera', {tituloWeb: "Crear alimento"}); %>
+    <%- include('template/navbar'); %>
+        <div class="container">
+            <h1 class="text-secondary">Crear Alimento</h1>
+            <form action="/alimentos" method="POST">
+                <input type="text" name="nombre" placeholder="Agregar nombre" class="form-control my-2" required>
+                <input type="text" name="marca" placeholder="Agregar marca" class="form-control my-2" required>
+                <input type="text" name="edad" placeholder="Agregar edad" class="form-control my-2" required>
+                <button class="btn btn-success btn-block" type="submit">Agregar</button>
+            </form>
+
+        </div>
+
+
+
+
+        <%- include("template/footer")  %>

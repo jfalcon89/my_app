@@ -1,0 +1,42 @@
+<!-- Cabecera & Navbar template -->
+<%- include('template/cabecera', {tituloWeb: "Detalle alimentos"}); %>
+    <%- include('template/navbar'); %>
+        <div class="container">
+            <div class="contenedor-img d-flex justify-content-center">
+                <img data-aos="fade-right" class="w-25" src="" alt="">
+            </div>
+            <h1 data-aos="fade-up" class="text-secondary">Detalle Alimentos</h1>
+
+            <% if (error) { %>
+                <p>
+
+                    <%= mensaje %>
+
+                </p>
+                <a href="/alimentos" class="btn btn-dark btn-block">Volver a Alimentos</a>
+
+                <% } %>
+
+                    <% if (!error) { %>
+
+                        <form id="editarAlimento" data-id="<%= alimento.id %>">
+                            <input type="text" value="<%= alimento.nombre %>" class="form-control my-2" name="nombre" id="nombreInput">
+                            <input type="text" value="<%= alimento.marca %>" class="form-control my-2" name="marca" id="marcaInput">
+                            <input type="text" value="<%= alimento.edad %>" class="form-control my-2" name="edad" id="edadInput">
+                            <button class="btn btn-warning btn-block" type="submit">
+                                Editar
+                            </button>
+                        </form>
+                        <hr>
+                        <button id="btnEliminarA" class="btn btn-danger btn-sm " data-id="<%= alimento.id %>">
+                            Eliminar
+                        </button>
+
+
+
+                        <% } %>
+        </div>
+
+        <script src="/js/btnActionFormAlimentos.js"></script>
+
+        <%- include("template/footer")  %>
