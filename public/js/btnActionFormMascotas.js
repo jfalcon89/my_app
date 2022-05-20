@@ -23,7 +23,7 @@ btnEliminarMascota.addEventListener("click", async() => {
 
 });
 
-// btn editar mascota
+//btn editar mascota
 const formEditar = document.querySelector('#editar');
 
 formEditar.addEventListener('submit', async(e) => {
