@@ -7,6 +7,28 @@ body {
     padding: 0;
 }
 
+
+/* trabajando animacion de titulo aqui */
+
+
+/* #inimation-dog {
+    background: url(/img/inicio/dog-black.gif) center;
+    background-size: 15%;
+    background-position-x: left;
+    background-repeat: no-repeat;
+    animation: cambio4 4s linear;
+    animation-timing-function: ease-out;
+}
+
+@keyframes cambio4 {
+    0% {
+        background-position-x: right;
+    }
+    100% {
+        background-position-x: left;
+    }
+} */
+
 #img-mascotas {
     /* display: flex;
     align-items: center;
@@ -72,6 +94,19 @@ body {
     background: url(/img/inicio/img_fondo_index.jpg) center;
     background-size: 100%;
     height: 450px;
+    animation: cambio3 4s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes cambio3 {
+    0% {
+        background: url(/img/inicio/img_fondo_index.jpg) center;
+        background-size: 100%;
+    }
+    100% {
+        background: url(/img/inicio/img_fondo_index_invertida.jpg) center;
+        background-size: 100%;
+    }
 }
 
 .img_slide {
@@ -89,7 +124,7 @@ body {
     display: flex;
     padding: 0;
     width: 200%;
-    animation: cambio2 3s linear infinite;
+    animation: cambio2 7s linear infinite;
 }
 
 .img_slide li {

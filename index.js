@@ -1,4 +1,3 @@
-const routes = require("./routes/index");
 const path = require("path");
 const bodyParser = require("body-parser");
 const exphbs = require('express-handlebars');
@@ -6,7 +5,7 @@ const ejs = require("ejs");
 const mysql = require("mysql");
 const express = require("express");
 const app = express(); //asignacion de express en app
-require('dotenv').config()
+const dotenv = require('dotenv').config()
 
 //CONFIGURACION PARA LEER EL BODY
 app.use(bodyParser.json());
@@ -42,16 +41,25 @@ app.listen(app.get("port"), () => {
     console.log("servidor funcionando en el puerto", app.get("port"))
 });
 
+
 //----------CONFIGURACION RUTAS ESTATICA-------------//
 app.use(express.static(path.join(__dirname, "public")));
 
+
 //----------RUTAS WEB DE LOS HANDLERS----------------//
-app.use(routes);
+
+// route middlewares
+const validacionToken = require("./routes/validacion-token");
+const authRoutes = require('./routes/auth');
+const indexRoutes = require("./routes/index");
+
+app.use("/user", authRoutes);
+app.use("/", indexRoutes);
 app.use("/Mascotas", require("./routes/Mascotas"));
 app.use("/alimentos", require("./routes/alimentos"));
 
+// estatica 404
 app.use((req, res, next) => {
-    //console.log(`${req.url} -${req.method}`);
     res.status(404).render("404");
 });
 
@@ -59,6 +67,3 @@ app.use((req, res, next) => {
 //motor de plantilla 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
-
-
-//middlewares

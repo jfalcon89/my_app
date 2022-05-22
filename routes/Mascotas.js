@@ -1,9 +1,9 @@
 const { json } = require("body-parser");
 const express = require("express");
 const router = express.Router();
-
 const Mascota = require("../modelo/mascota");
 
+// CONSULTANDO TODAS LAS MASCOTAS
 router.get("/", async(req, res) => {
 
     try {
@@ -21,9 +21,11 @@ router.get("/", async(req, res) => {
 
 });
 
+// VISTA PARA CREAR MASCOTA 
 router.get("/crear", (req, res) => {
     res.render("crear");
 });
+
 
 //CREAR MASCOTA
 router.post("/", async(req, res) => {
@@ -38,6 +40,7 @@ router.post("/", async(req, res) => {
     }
 });
 
+// MOSTRAR SOLO UNA MASCOTA EN LA VISTA DETALLE USANDO SU ID  
 router.get("/:id", async(req, res) => {
 
     const id = req.params.id

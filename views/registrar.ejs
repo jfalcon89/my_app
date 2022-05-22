@@ -1,0 +1,27 @@
+<!-- Cabecera & Navbar template -->
+<%- include('template/cabecera', {tituloWeb: "Registrar"}); %>
+    <%- include('template/navbar'); %>
+
+
+        <h1>Registrar</h1>
+
+        <div class="container d-md-flex justify-content-center w-50 ">
+
+            <form action="" method="POST">
+                <label for="" class="form-label">Nombre de usuario</label>
+                <input type="text" name="name" placeholder="Escriba su usuario" class="form-control my-2" required>
+
+                <label for="" class="form-label">Email</label>
+                <input type="text" name="email" placeholder="Escriba su correo aqui" class="form-control my-2" required>
+
+                <label for="" class="form-label">Password</label>
+                <input type="text" name="password" placeholder="Escriba un password" class="form-control my-2" required>
+
+                <button class="btn btn-success btn-block" type="submit">Registrarse</button>
+            </form>
+
+        </div>
+
+
+
+        <%- include("template/footer")  %>

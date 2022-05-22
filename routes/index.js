@@ -1,10 +1,15 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
+// const validacionToken = require("./routes/validacion-token");
+// const authRoutes = require('./routes/auth');
+
+
+router.get('/', (req, res) => {
+
     res.render("index", { nombre: "datos inicio desde una variable dinamica" });
-    // res.end("prueba ")
-});
+})
+
 
 router.get("/contacto", (req, res) => {
     res.render("contacto", { nombre: "datos contacto desde una variable dinamica" });
